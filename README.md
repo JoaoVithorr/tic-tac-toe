@@ -11,5 +11,5 @@ Objetivo: O primeiro jogador a conseguir alinhar três de seus símbolos (Xs ou 
 
 Empate: Se todas as casas forem preenchidas e nenhum jogador conseguir três em linha, o jogo termina em empate.
 
-s.
+
 
