@@ -12,7 +12,7 @@ class Board:
   
   def is_valid_position(self, position):
     x, y = position_to_xy(position)
-    return self.board[y][x] != "X" or self.board[y][x] != "O"
+    return self.board[y][x] != "X" and self.board[y][x] != "O"
 
 
   def play(self, symbol, position):
@@ -52,15 +52,16 @@ class Board:
 
     if len(set(diagonal_princ)) == 1 or len(set(diagonal_sec)) == 1:
       return True 
-        
-# Conferindo empate
+    
+    # Conferindo empate
   def check_draw_positions(self):
     for position in range(1, BOARD_SIZE * BOARD_SIZE + 1):
-      if self.is_valid_position(position): 
-        return False
-    return True
+        if self.is_valid_position(position):
+            return False  # Se encontrar uma posição válida, retorna False imediatamente
+    return True  # Se percorrer todas as posições e não encontrar nenhuma válida, retorna True
+        
 
-
+# Transformando a posição(casa) em uma posição [x][y]
 def position_to_xy(position):
   x = (position - 1) % 3
   y = (position - 1) // 3

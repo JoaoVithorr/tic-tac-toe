@@ -36,12 +36,12 @@ def start_game():
         
         if win:
             print(color_text(f"Parabéns jogador {current_player}, você venceu!", COLOR_GREEN))
-            display_board()
+            display_board(board.board)
             break
 
         if draw:
             print(color_text("Foi um empate :(", COLOR_YELLOW))
-            display_board()
+            display_board(board.board)
             break
          
         #  Alternando entre os jogadores

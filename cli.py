@@ -9,6 +9,7 @@ COLOR_RED = "\033[31m"
 def color_text(text, color):
     return f"{color}{text}{COLOR_WHITE}"
 
+
 def display_title():         
     print(" _______ _        _______           _______")
     print("|__   __(_)      |__   __|         |__   __|")
