@@ -1,4 +1,7 @@
 # Jogo da Velha 
+- Para jogar o jogo, você deve ter a versão 3.12.4 de Python instalada
+- Basta executar o arquivo game.py e seguir as instruções passadas na tela
+
 ## Regras
 - O jogo ocorre em um tabuleiro 3x3;
 - O jogo será para duas pessoas jogarem, alternadamente;

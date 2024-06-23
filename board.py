@@ -1,17 +1,18 @@
-import numpy
-
+# Definindo a proporção do tabuleiro 
 BOARD_SIZE = 3
 
+# Criando a classe do tabuleiro 
 class Board: 
+  
   def __init__(self):
     self.board = [["1", "2", "3"],
                   ["4", "5", "6"],
                   ["7", "8", "9"]]
     
-    
+  
   def is_valid_position(self, position):
     x, y = position_to_xy(position)
-    return self.board[y][x].isnumeric()
+    return self.board[y][x] != "X" or self.board[y][x] != "O"
 
 
   def play(self, symbol, position):
@@ -19,10 +20,12 @@ class Board:
     self.board[y][x] = symbol
 
 
+# Conferindo se há um ganhador
   def check_winning_positions(self):
     # check rows
     # [X, O, X] -> set([X, O, X]) = [X, O]
-    for row in range(BOARD_SIZE):
+    for row in self.board:
+      # Transformando em um set a lista, para identificar se há diferentes símbolos
       if len(set(row)) == 1:
         return True
         
@@ -50,7 +53,7 @@ class Board:
     if len(set(diagonal_princ)) == 1 or len(set(diagonal_sec)) == 1:
       return True 
         
-
+# Conferindo empate
   def check_draw_positions(self):
     for position in range(1, BOARD_SIZE * BOARD_SIZE + 1):
       if self.is_valid_position(position): 
@@ -62,4 +65,5 @@ def position_to_xy(position):
   x = (position - 1) % 3
   y = (position - 1) // 3
   return x, y
+
 
