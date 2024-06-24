@@ -1,4 +1,4 @@
-from board import Board
+from board import *
 from cli import *
 
 
